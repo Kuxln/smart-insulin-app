@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Insulin — Реєстрація</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow" style="width: 28rem;">
+        <div class="card-body p-4">
+            <h4 class="card-title text-center mb-4">Реєстрація</h4>
+
+            <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+
+            <form th:action="@{/register}" th:object="${form}" method="post">
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Повне ім'я</label>
+                    <input type="text" id="fullName" th:field="*{fullName}"
+                           class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" th:field="*{email}"
+                           class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Пароль</label>
+                    <input type="password" id="password" th:field="*{password}"
+                           class="form-control" required minlength="6">
+                </div>
+                <div class="mb-3">
+                    <label for="diabetesType" class="form-label">Тип діабету (необов'язково)</label>
+                    <select id="diabetesType" th:field="*{diabetesType}" class="form-select">
+                        <option value="">— не вказано —</option>
+                        <option value="1">Тип 1</option>
+                        <option value="2">Тип 2</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Зареєструватись</button>
+            </form>
+
+            <hr>
+            <p class="text-center mb-0">
+                Вже є акаунт? <a th:href="@{/login}">Увійти</a>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
