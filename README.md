@@ -35,6 +35,27 @@ smart-insulin-backend/
 | `/glucose` | Full glucose reading list, add/delete |
 | `/profile` | View and edit medical profile |
 
+## Screens
+- **Main page**
+
+![main_page.png](demo/main_page.png)
+
+- **Glucose page**
+
+![glucose_page.png](demo/glucose_page.png)
+
+- **Profile page**
+
+![profile_page.png](demo/profile_page.png)
+
+- **Login page**
+
+![login_page.png](demo/login_page.png)
+
+- **Registration page**
+
+![registration_page.png](demo/registration_page.png)
+
 ## Prerequisites
 
 - **Java 17+**
